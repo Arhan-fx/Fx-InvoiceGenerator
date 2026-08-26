@@ -24,7 +24,6 @@ function initApp() {
     updateInvoicePreview();
 }
 
-/* ---------------- Theme ---------------- */
 function setupTheme() {
     const toggle = document.getElementById('themeToggle');
     const saved = localStorage.getItem('ledger-theme') || 'dark';
@@ -46,7 +45,6 @@ function applyTheme(theme) {
     }
 }
 
-/* ---------------- Folio rail (scrollspy + click-to-scroll) ---------------- */
 function setupFolioRail() {
     const tabs = Array.from(document.querySelectorAll('.folio-tab'));
 
@@ -76,7 +74,6 @@ function setupFolioRail() {
     sections.forEach(section => observer.observe(section));
 }
 
-/* ---------------- Form wiring ---------------- */
 function setupFormListeners() {
     const previewFields = [
         'companyName', 'companyEmail', 'companyAddress', 'companyPhone',
@@ -210,7 +207,6 @@ function updateInvoicePreview() {
     setText('previewTotal', document.getElementById('totalAmount').textContent);
 }
 
-/* ---------------- Helpers ---------------- */
 function field(id) { return document.getElementById(id).value.trim(); }
 function setText(id, value, fallback) { document.getElementById(id).textContent = value || fallback || value; }
 function escapeHtml(str) {
@@ -231,7 +227,6 @@ function formatDate(dateString) {
     return new Date(dateString + 'T00:00:00').toLocaleDateString('en-US', options);
 }
 
-/* ---------------- PDF export ---------------- */
 async function generatePdf() {
     const btn = document.getElementById('generatePdf');
     const originalHtml = btn.innerHTML;
@@ -243,9 +238,6 @@ async function generatePdf() {
     try {
         const { jsPDF } = window.jspdf;
 
-        // Render a fixed-width, A4-proportioned clone offscreen so the exported
-        // page always has correct proportions, regardless of the on-screen
-        // column width (which shrinks on smaller/narrower viewports).
         const invoicePreview = document.getElementById('invoicePreview');
         captureWrapper = document.createElement('div');
         captureWrapper.className = 'pdf-capture-wrapper';
