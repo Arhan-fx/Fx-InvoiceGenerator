@@ -1,6 +1,4 @@
-/* ============================================================
-   LEDGER STUDIO — design tokens
-   ============================================================ */
+
 :root{
   --ink-900:#0B1220;
   --ink-800:#121B2E;
@@ -64,9 +62,7 @@ button{font-family:var(--sans); cursor:pointer;}
 
 a{color:inherit; text-decoration:none;}
 
-/* ============================================================
-   LETTERHEAD
-   ============================================================ */
+
 .letterhead{
   display:flex;
   align-items:center;
@@ -107,7 +103,7 @@ a{color:inherit; text-decoration:none;}
   box-shadow:0 0 0 3px rgba(201,162,90,.18);
 }
 
-/* theme switch */
+
 .theme-switch input{position:absolute; opacity:0; width:0; height:0;}
 .theme-track{
   position:relative;
@@ -132,9 +128,7 @@ a{color:inherit; text-decoration:none;}
 }
 .theme-switch input:checked ~ .theme-track .theme-knob{ transform:translateX(26px); }
 
-/* ============================================================
-   WORKSPACE GRID
-   ============================================================ */
+
 .workspace{
   display:grid;
   grid-template-columns:64px minmax(0,1fr) minmax(430px,560px);
@@ -142,7 +136,6 @@ a{color:inherit; text-decoration:none;}
   align-items:start;
 }
 
-/* ---- folio rail ---- */
 .folio-rail{
   position:sticky; top:0;
   height:100vh;
@@ -178,9 +171,7 @@ a{color:inherit; text-decoration:none;}
 }
 .folio-tab:hover{color:var(--slate-100);}
 
-/* ============================================================
-   FORM COLUMN
-   ============================================================ */
+
 .ledger-form{
   padding:44px clamp(20px,4vw,48px) 80px;
   max-width:760px;
@@ -268,7 +259,7 @@ a{color:inherit; text-decoration:none;}
   .field-grid.three{grid-template-columns:1fr 1fr;}
 }
 
-/* ---- ledger line-item table ---- */
+
 .ledger-table{border-top:1px solid var(--line-800);}
 .ledger-head{
   display:flex; gap:10px;
@@ -342,7 +333,6 @@ a{color:inherit; text-decoration:none;}
 }
 .add-line:hover{border-color:var(--brass); background:rgba(201,162,90,.06);}
 
-/* ---- summary ---- */
 .summary-block{
   background:var(--ink-800);
   border:1px solid var(--line-800);
@@ -366,7 +356,6 @@ a{color:inherit; text-decoration:none;}
 .mono-value{font-family:var(--mono);}
 .summary-line.grand .mono-value{color:var(--brass); font-size:1.1rem;}
 
-/* ---- controls ---- */
 .control-row{display:flex; align-items:center; gap:18px; margin-top:30px; flex-wrap:wrap;}
 
 .btn-stamp{
@@ -416,9 +405,6 @@ a{color:inherit; text-decoration:none;}
 }
 .btn-text-danger:hover{text-decoration-color:var(--ledger-red-soft);}
 
-/* ============================================================
-   PAPER PREVIEW
-   ============================================================ */
 .preview-column{padding:44px clamp(16px,3vw,40px) 80px 0;}
 .preview-sticky{position:sticky; top:24px;}
 
@@ -534,14 +520,11 @@ a{color:inherit; text-decoration:none;}
   border-top:1px solid var(--paper-line);
 }
 
-/* ============================================================
-   PDF CAPTURE SURFACE (offscreen, fixed A4-proportioned width)
-   ============================================================ */
 .pdf-capture-wrapper{
   position:fixed;
   top:0;
   left:-10000px;
-  width:794px; /* A4 width @ 96dpi, keeps proportions correct regardless of on-screen column size */
+  width:794px;
   background:var(--paper);
   pointer-events:none;
 }
@@ -550,9 +533,6 @@ a{color:inherit; text-decoration:none;}
   border-radius:0;
 }
 
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
 @media (max-width:1180px){
   .workspace{grid-template-columns:56px minmax(0,1fr);}
   .preview-column{
@@ -597,8 +577,65 @@ a{color:inherit; text-decoration:none;}
   *{transition:none !important;}
 }
 
-@media print{
-  body *{visibility:hidden;}
-  .invoice-paper, .invoice-paper *{visibility:visible;}
-  .invoice-paper{position:absolute; left:0; top:0; width:100%; box-shadow:none;}
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #FBF7EE;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  .preview-column,
+  .invoice-paper,
+  .invoice-paper * {
+    visibility: visible;
+  }
+
+  .preview-column {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 0;
+  }
+
+  .preview-sticky {
+    position: static;
+  }
+
+  .invoice-paper {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    min-height: 0;
+    box-shadow: none;
+    margin: 0;
+  }
+
+  .paper-content {
+    padding: 40px 36px 30px;
+  }
+}
+
+.pdf-brand-tag {
+    color: #C9A25A;
+    text-align: center;
+    padding-top: 10px;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+}
+.pdf-brand-text {
+    color: #6A7385;
 }
