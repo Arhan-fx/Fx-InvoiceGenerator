@@ -2,7 +2,7 @@
 
 An Invoice Generator.
 
-![Fx InvoiceGenerator](screenshot2.png)
+![Fx InvoiceGenerator](Screenshot2.png)
 
 ## About
 
@@ -38,12 +38,13 @@ This is an invoice generator with a clean minimal look, and a working print as w
 
 ## Credits
 
-Created by **ME**
+Created by **ME and some tutorials**
 
 
-* GitHub: **[@Arhan-fx](https://github.com/Arhan-fx)**
-* Repository: **[President-John-OS](https://github.com/Arhan-fx/President-John-OS)**
 
-![JohnOS](eagle.png)
+ **[Tutorial 1](https://learn.bmwtech.in/creating-an-invoice-generator-with-html-and-javascript/#google_vignette)**
+ **[Tutorial 2](https://www.sourcecodester.com/javascript/18165/invoice-generator-using-html-css-and-javascript-source-code.html)**
+
+![Fx InvoiceGenerator](Screenshot2.png)
 
 
