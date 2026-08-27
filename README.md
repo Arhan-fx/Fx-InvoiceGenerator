@@ -45,6 +45,6 @@ Created by **ME and some tutorials**
  **[Tutorial 1](https://learn.bmwtech.in/creating-an-invoice-generator-with-html-and-javascript/#google_vignette)**
  **[Tutorial 2](https://www.sourcecodester.com/javascript/18165/invoice-generator-using-html-css-and-javascript-source-code.html)**
 
-![Fx InvoiceGenerator](Screenshot3.png)
+![Fx InvoiceGenerator](Screenshot.png)
 
 
