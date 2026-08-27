@@ -8,7 +8,7 @@ An Invoice Generator.
 
 This is an invoice generator with a clean minimal look, and a working print as well as download as a pdf button. 
 
-**[Demo ](https://president-john-os.vercel.app/)**
+**[Demo ](https://fx-invoice-generator.vercel.app)**
 
 ## Features 
 
