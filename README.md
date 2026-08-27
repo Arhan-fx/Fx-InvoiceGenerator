@@ -2,7 +2,7 @@
 
 An Invoice Generator.
 
-![Fx InvoiceGenerator](Screenshot2.png)
+![Fx InvoiceGenerator](Screenshot 2026-08-27 084033.png)
 
 ## About
 
